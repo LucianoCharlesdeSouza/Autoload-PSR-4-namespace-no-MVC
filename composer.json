@@ -1,0 +1,16 @@
+{
+    "name": "vendor/mvc-composer-namespace",
+    "description": "Descrição do projeto mvc_composer_namespace.",
+    "authors": [
+        {
+            "name": "Luciano Charles de Souza",
+            "email": "souzacomprog@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "App"
+        }
+    },
+    "require": {}
+}
