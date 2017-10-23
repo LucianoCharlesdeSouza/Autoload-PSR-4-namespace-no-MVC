@@ -4,52 +4,65 @@ namespace App\Core;
 
 class Core {
 
-    public function run() {
+    private $Url = null;
+    private $Controller = '';
+    private $Action = '';
+    private $Params = [];
+
+    private function getUrl() {
         $url = '/';
         if (isset($_GET['url'])) {
             $url .= $_GET['url'];
         }
+        $this->Url = $url;
+    }
 
-        $params = array();
-        if (!empty($url) && $url != '/') {
-            $url = explode('/', $url);
-            array_shift($url);
+    private function getControllerActionParam() {
 
-            $currentController = $url[0] . 'Controller';
-            array_shift($url);
+        if (!empty($this->Url) && $this->Url != '/') {
+            $this->Url = explode('/', $this->Url);
+            array_shift($this->Url);
 
-            if (isset($url[0]) && !empty($url[0])) {
-                $currentAction = $url[0];
-                array_shift($url);
-            } else {
-                $currentAction = 'index';
-            }
-
-            if (count($url) > 0) {
-                $params = $url;
-            }
+            $this->Controller = $this->Url[0] . 'Controller';
+            array_shift($this->Url);
+            $this->getAction();
+            $this->getParams();
         } else {
-            $currentController = 'homeController';
-            $currentAction = 'index';
+            $this->Controller = 'homeController';
+            $this->Action = 'index';
         }
+    }
 
-//        if (!file_exists('controllers/' . $currentController . '.php') || !method_exists($currentController, $currentAction)):
-//            $c = new errorController();
-//            $currentAction = 'index';
-//        else:
-//            $c = new $currentController();
-//        endif;
-//
-//        call_user_func_array(array($c, $currentAction), $params);
+    private function getAction() {
+        if (isset($this->Url[0]) && !empty($this->Url[0])) {
+            return $this->Action = $this->Url[0];
+            array_shift($this->Url);
+        }
+        return $this->Action = 'index';
+    }
 
-        $controllerClassName = '\\App\\Controllers\\' . $currentController;
+    private function getParams() {
+        if (count($this->Url) > 0) {
+            foreach ($this->Url as $params):
+                $this->Params = $params;
+            endforeach;
+        }
+    }
+
+    private function execute() {
+        $controllerClassName = '\\App\\Controllers\\' . $this->Controller;
         if (!class_exists($controllerClassName)) {
             (new \App\Controllers\errorController())->index();
             return;
         }
-
         $controllerClass = new $controllerClassName();
-        $controllerClass->{$currentAction}($params);
+        $controllerClass->{$this->Action}($this->Params);
+    }
+
+    public function run() {
+        $this->getUrl();
+        $this->getControllerActionParam();
+        $this->execute();
     }
 
 }
