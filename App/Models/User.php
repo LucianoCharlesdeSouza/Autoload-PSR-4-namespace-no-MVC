@@ -19,6 +19,7 @@ class User extends Model {
             $sql->execute();
             if ($sql->rowCount() > 0) {
                 $this->Result = $sql->fetchAll(\PDO::FETCH_ASSOC);
+                return true;
             }
         } catch (PDOException $e) {
             die($e->getMessage());
