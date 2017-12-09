@@ -3,16 +3,16 @@
     <head>
         <meta http-equiv = "content-type" content = "text/html; charset=UTF-8">
         <title>Composer Autoload e Namespace</title>
-        <link href="<?= BASE; ?>assets/css/bootstrap.min.css" rel="stylesheet">
-        <link href="<?= BASE; ?>assets/css/font-awesome.css" rel="stylesheet">
-        <link href="<?= BASE; ?>assets/css/style.css" rel="stylesheet">
+        <link href="<?= BASE; ?>App/assets/css/bootstrap.min.css" rel="stylesheet">
+        <link href="<?= BASE; ?>App/assets/css/font-awesome.css" rel="stylesheet">
+        <link href="<?= BASE; ?>App/assets/css/style.css" rel="stylesheet">
 
-        <script src="<?= BASE; ?>assets/js/jquery.js"></script>
-        <script src="<?= BASE; ?>assets/js/bootstrap.min.js"></script>
+        <script src="<?= BASE; ?>App/assets/js/jquery.js"></script>
+        <script src="<?= BASE; ?>App/assets/js/bootstrap.min.js"></script>
         <script type="text/javascript">
             var BASE = '<?php echo BASE; ?>';
         </script>
-        <script src="<?= BASE; ?>assets/js/ajax.js"></script>
+        <script src="<?= BASE; ?>App/assets/js/ajax.js"></script>
     </head>
     <body>
 
