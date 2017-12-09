@@ -6,9 +6,9 @@ global $config;
 $config = array();
 
 if (ENVIRONMENT == 'development') {
-    define("BASE", "http://localhost/mvc_composer_namespace/App/");
+    define("BASE", "http://localhost/mvc_composer_namespace/");
     define("BASEADMIN", "http://localhost/mvc_composer_namespace/App/admin/");
-    $config['dbname'] = 'grupo++';
+    $config['dbname'] = '';
     $config['host'] = 'localhost';
     $config['dbuser'] = 'root';
     $config['dbpass'] = '';
