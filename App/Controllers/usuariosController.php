@@ -7,11 +7,19 @@ use App\Core\Controller,
 
 class usuariosController extends Controller {
 
-    public function index() {
-        $user = new User();
-        $user->selectAll();
+    private $User;
 
-        $this->data['lista_usuarios'] = $user->getResult();
+    public function __construct() {
+        parent::__construct();
+        $this->User = new User();
+    }
+
+    public function index() {
+
+        if ($this->User->selectAll()) {
+
+            $this->data['lista_usuarios'] = $this->User->getResult();
+        }
 
         $this->loadTemplate("Usuarios/listagem", $this->getData());
     }
