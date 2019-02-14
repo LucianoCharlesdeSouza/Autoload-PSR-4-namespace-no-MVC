@@ -12,9 +12,9 @@ class HomeController extends Controller
     {
 
         $menu = new Menu;
-        $bindValue = ['id' => 2];
-        $paginate = $menu->paginate();
-        dd($paginate);
+
+        // $all = $menu->findAll();
+        // dd($all);
 
         $this->loadTemplate('home', $this->getData());
     }
