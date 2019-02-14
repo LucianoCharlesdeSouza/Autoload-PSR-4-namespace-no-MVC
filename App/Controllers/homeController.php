@@ -15,6 +15,7 @@ class HomeController extends Controller
 
         // $all = $menu->findAll();
         // dd($all);
+        
 
         $this->loadTemplate('home', $this->getData());
     }
