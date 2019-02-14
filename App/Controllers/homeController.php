@@ -3,10 +3,18 @@
 namespace App\Controllers;
 
 use App\Core\Controller;
+use App\Models\Menu;
 
-class homeController extends Controller {
+class HomeController extends Controller
+{
 
-    public function index() {
+    public function index()
+    {
+
+        $menu = new Menu;
+        $bindValue = ['id' => 2];
+        $paginate = $menu->paginate();
+        dd($paginate);
 
         $this->loadTemplate('home', $this->getData());
     }

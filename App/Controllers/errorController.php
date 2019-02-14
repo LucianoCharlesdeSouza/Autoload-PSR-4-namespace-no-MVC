@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Core\Controller;
 
-class errorController extends Controller {
+class ErrorController extends Controller {
 
     public function index() {
 

@@ -24,14 +24,14 @@ class Core {
             $this->Url = explode('/', $this->Url);
             array_shift($this->Url);
 
-            $this->Controller = $this->Url[0] . 'Controller';
+            $this->Controller = ucfirst($this->Url[0]) . 'Controller';
             array_shift($this->Url);
 
 
             $this->getAction();
             $this->getParams();
         } else {
-            $this->Controller = 'homeController';
+            $this->Controller = 'HomeController';
             $this->Action = 'index';
         }
     }
@@ -53,7 +53,7 @@ class Core {
     private function execute() {
         $controllerClassName = '\\App\\Controllers\\' . $this->Controller;
         if (!class_exists($controllerClassName)) {
-            (new \App\Controllers\errorController())->index();
+            (new \App\Controllers\ErrorController())->index();
             return;
         }
         $controllerClass = new $controllerClassName();
