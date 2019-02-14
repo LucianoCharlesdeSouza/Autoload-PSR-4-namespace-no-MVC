@@ -6,5 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'RTW\\' => array($baseDir . '/System'),
     'App\\' => array($baseDir . '/App'),
 );

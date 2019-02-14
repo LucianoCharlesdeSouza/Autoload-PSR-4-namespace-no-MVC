@@ -3,16 +3,10 @@
     <head>
         <meta http-equiv = "content-type" content = "text/html; charset=UTF-8">
         <title>Composer Autoload e Namespace</title>
-        <link href="<?= BASE; ?>App/assets/css/bootstrap.min.css" rel="stylesheet">
-        <link href="<?= BASE; ?>App/assets/css/font-awesome.css" rel="stylesheet">
-        <link href="<?= BASE; ?>App/assets/css/style.css" rel="stylesheet">
+        <link href="<?= base_url('/App/assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
+        <link href="<?= base_url('/App/assets/css/font-awesome.css'); ?>" rel="stylesheet">
+        <link href="<?= base_url('/App/assets/css/style.css'); ?>" rel="stylesheet">
 
-        <script src="<?= BASE; ?>App/assets/js/jquery.js"></script>
-        <script src="<?= BASE; ?>App/assets/js/bootstrap.min.js"></script>
-        <script type="text/javascript">
-            var BASE = '<?php echo BASE; ?>';
-        </script>
-        <script src="<?= BASE; ?>App/assets/js/ajax.js"></script>
     </head>
     <body>
 
@@ -55,5 +49,12 @@
             <h1></h1>
         </div>
 
+
+        <script src="<?= base_url('/App/assets/js/jquery.js'); ?>"></script>
+        <script src="<?= base_url('/App/assets/js/bootstrap.min.js'); ?>"></script>
+        <script type="text/javascript">
+            var BASE = '<?php echo base_url(); ?>';
+        </script>
+        <script src="<?= base_url('/App/assets/js/ajax.js'); ?>"></script>
     </body>
 </html>
