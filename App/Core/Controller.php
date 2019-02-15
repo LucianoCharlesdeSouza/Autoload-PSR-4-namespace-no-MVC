@@ -2,35 +2,41 @@
 
 namespace App\Core;
 
-class Controller {
+class Controller
+{
 
     protected $data = [];
 
-    public function __construct() {
+    public function __construct()
+    {
 
     }
 
-    protected function getData() {
+    protected function getData()
+    {
         return $this->data;
     }
 
-    public function __call($name, $arguments) {
+    public function __call($name, $arguments)
+    {
         $this->loadTemplate('error_404');
     }
 
-    public function loadView($viewName, $viewData = array()) {
+    public function loadView($viewFolder, $viewName, $viewData = array())
+    {
         extract($viewData);
-        include 'App/Views/' . $viewName . '.php';
+        include_once '../app/Views/' . $viewFolder . "/" . $viewName . '.php';
     }
 
-    public function loadTemplate($viewName, $viewData = array()) {
-
-        include 'App/Views/template.php';
+    public function loadTemplate($viewFolder, $viewName, $viewData = array())
+    {
+        include "../app/Views/{$viewFolder}/template.php";
     }
 
-    public function loadViewInTemplate($viewName, $viewData) {
+    public function loadViewInTemplate($viewFolder,$viewName, $viewData)
+    {
         extract($viewData);
-        include 'App/Views/' . $viewName . '.php';
+        include '../app/Views/' . $viewFolder . "/" . $viewName . '.php';
     }
 
 }

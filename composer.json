@@ -1,6 +1,8 @@
 {
     "name": "vendor/mvc-composer-namespace",
     "description": "Descrição do projeto mvc_composer_namespace.",
+    "license": "MIT",
+    "type": "project",
     "authors": [
         {
             "name": "Luciano Charles de Souza",
@@ -9,9 +11,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "App\\": "App",
-            "RTW\\": "System"
+            "App\\": "app",
+            "RTW\\": "system"
         }
     },
-    "require": {}
+    "require": {
+        "php": ">=7.1",
+        "pecee/simple-router": "4.2.0.6"
+    }
 }

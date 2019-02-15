@@ -18,15 +18,15 @@ if (!function_exists('requestValue')) {
  * Função que redireciona a página
  */
 
-if (!function_exists('redirect')) {
+// if (!function_exists('redirect')) {
 
-    function redirect($to = null)
-    {
-        header("Location: " . base_url($to));
-        exit();
-    }
+//     function redirect($to = null)
+//     {
+//         header("Location: " . base_url($to));
+//         exit();
+//     }
 
-}
+// }
 
 /*
  * Função que redireciona a página após um determinado tempo
@@ -47,17 +47,17 @@ if (!function_exists('redirectAfter')) {
  * Função que recupera os valores do request
  */
 
-if (!function_exists('request')) {
+// if (!function_exists('request')) {
 
-    function request($name)
-    {
-        $value = '';
-        if (sessionHas($name)) {
-            $value = getSession($name);
-            sessionDestroy($name);
-        }
+//     function request($name)
+//     {
+//         $value = '';
+//         if (sessionHas($name)) {
+//             $value = getSession($name);
+//             sessionDestroy($name);
+//         }
 
-        return $value;
-    }
+//         return $value;
+//     }
 
-}
+// }
