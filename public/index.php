@@ -12,4 +12,4 @@ foreach (glob('../system/Functions/*.php') as $file) {
   include_once $file;
 }
 
-\App\Router::start();
+\App\Route::start();

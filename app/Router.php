@@ -7,7 +7,7 @@ namespace App;
 
 use Pecee\SimpleRouter\SimpleRouter;
 
-class Router extends SimpleRouter
+class Route extends SimpleRouter
 {
     /**
      * @throws \Exception
