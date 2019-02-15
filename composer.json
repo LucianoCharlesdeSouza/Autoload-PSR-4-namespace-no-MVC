@@ -1,6 +1,6 @@
 {
-    "name": "vendor/mvc-composer-namespace",
-    "description": "Descrição do projeto mvc_composer_namespace.",
+    "name": "rtw/mvc",
+    "description": "Projeto Em Arquitetura MVC",
     "license": "MIT",
     "type": "project",
     "authors": [
