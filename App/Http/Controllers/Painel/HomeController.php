@@ -1,22 +1,23 @@
 <?php
 
-namespace App\Http\Controllers\Painel;
+namespace App\Controllers;
 
 use App\Core\Controller;
+use App\Models\Menu;
 
 class HomeController extends Controller
 {
 
     public function index()
-    {      
-        $this->loadTemplate('painel','home', $this->getData());
-    }
-
-    public function teste($param1,$param2)
     {
-        $this->data['parametros'] = [$param1,$param2];
 
-        $this->loadTemplate('painel','teste', $this->getData());
+        $menu = new Menu;
+
+        // $all = $menu->findAll();
+        // dd($all);
+        
+
+        $this->loadTemplate('home', $this->getData());
     }
 
 }
