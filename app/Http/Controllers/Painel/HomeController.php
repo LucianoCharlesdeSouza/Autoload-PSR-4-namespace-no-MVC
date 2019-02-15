@@ -9,7 +9,7 @@ class HomeController extends Controller
 
     public function index()
     {    
-        $this->loadTemplate('painel','home', $this->getData());
+       $this->loadTemplate('painel','home', $this->getData());
     }
 
 }

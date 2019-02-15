@@ -22,7 +22,7 @@ use Pecee\Http\Request;
  * @return \Pecee\Http\Url
  * @throws \InvalidArgumentException
  */
-function url(? string $name = null, $parameters = null, ? array $getParams = null) : Url
+function route(? string $name = null, $parameters = null, ? array $getParams = null) : Url
 {
   return Router::getUrl($name, $parameters, $getParams);
 }
