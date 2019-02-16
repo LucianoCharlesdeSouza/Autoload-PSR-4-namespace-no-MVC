@@ -2,6 +2,7 @@
 
 namespace RTW\Classes;
 
+use \Exception;
 /*
  * Class Pagination
  *

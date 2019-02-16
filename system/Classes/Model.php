@@ -2,6 +2,8 @@
 
 namespace RTW\Classes;
 
+use \PDO;
+
 /**
  * Class Model
 
