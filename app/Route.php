@@ -18,10 +18,6 @@ class Route extends SimpleRouter
 	 */
 	public static function start() : void
 	{
-		// Load our helpers
-		// require_once 'helpers.php';
-		// Load our custom routes
-		require_once '../routes/web.php';
 		// Do initial stuff
 		parent::start();
 	}
