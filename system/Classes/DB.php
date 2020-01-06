@@ -29,7 +29,7 @@ class DB
             $db = database();
             if (self::$conn == null) {
 
-                self::$conn = new PDO("mysql:dbname=" . $db['database'] . ";port=" . $db['port'] . ";host=" . $db['host'], $db['username'], $db['password'], $db['options']);
+                self::$conn = new PDO("mysql:dbname=" . $db['database'] . ";port=" . $db['port'] . ";charset=" . $db['charset'] . ";host=" . $db['host'], $db['username'], $db['password'], $db['options']);                self::$conn->setAttribute(PDO::ATTR_ERRMODE, $db['errmode']);
                 self::$conn->setAttribute(PDO::ATTR_ERRMODE, $db['errmode']);
                 self::$conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, $db['fetch_mode']);
             }
